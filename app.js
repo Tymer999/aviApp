@@ -21,9 +21,13 @@ starBtns.forEach((starBtn) => {
   starBtn.addEventListener('click', (e) => {
     const target = e.currentTarget.dataset.id;
     changeColor(target);
-    showPreloader();
+    
   })
 })
+
+setTimeout(() => {
+  showPreloader();
+}, 10000)
 
 starBtns2.forEach((starBtn2) => {
   starBtn2.addEventListener('click', (e) => {
@@ -144,11 +148,12 @@ function showPreloader() {
       starBtn3.addEventListener('click', (e) => {
         const target = e.currentTarget.dataset.id;
         changeColor3(target);
-        setTimeout(() => {
-          preloader3.style.display = "none";
-        }, 5000)
       })
     })
+
+    setTimeout(() => {
+      preloader3.style.display = "none";
+    }, 5000)
 
     starBtns4.forEach((starBtn4) => {
       starBtn4.addEventListener('click', (e) => {

@@ -1,4 +1,4 @@
-const moves = ["2.33", "100.56", "1.20", "13.55"];
+const moves = ["2.33", "5.67", "1.20", "13.55"];
 
 
 const loadingBar = document.querySelector('.loading-bar');
@@ -64,10 +64,10 @@ starBtns3.forEach((starBtn3) => {
   starBtn3.addEventListener('click', (e) => {
     const target = e.currentTarget.dataset.id;
     changeColor3(target);
-    setTimeout(() => {
-      preloader3.style.display = "none";
-    }, 5000)
   })
+  setTimeout(() => {
+    preloader3.style.display = "none";
+  }, 5000)
 })
 
 starBtns4.forEach((starBtn4) => {
@@ -127,10 +127,11 @@ btn.addEventListener("click", () => {
     value = 0;
   }
   setTimeout(() => {
+    loadingFill.style.transform = `translateX(${100}%)`;
     btn.textContent = "Next";
     loader.style.display = "none";
     move.textContent = `${moves[value]}x`;
   }, 4000);
 
-  // loadingFill.classList.add("hide-fill");
+  loadingFill.style.transform = `translateX(${-100}%)`;
 })
